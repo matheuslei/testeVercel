@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "frontend/index.html", "use": "@vercel/static-build" },
+    { "src": "backend/**/*", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/salvar-em-excel", "dest": "/backend/salvar-em-excel.js" },
+    { "src": "/(.*)", "dest": "/frontend/$1" }
+  ]
+}
